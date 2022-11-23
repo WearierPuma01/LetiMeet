@@ -1,14 +1,12 @@
 package com.etu.letimeet.entity.event.refereces;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "events_types")
 public class EventType {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "event_type_id")
     private short eventTypeID;
     @Column(name = "event_type_name")

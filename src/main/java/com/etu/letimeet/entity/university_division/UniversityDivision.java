@@ -13,8 +13,9 @@ import java.util.List;
 @Table(name = "university_divisions")
 public class UniversityDivision {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "division_id")
-    private long divisionID;
+    private Long divisionID;
     @Column(name = "division_full_name")
     private String divisionFullName;
     @Column(name = "division_short_name")
@@ -90,11 +91,11 @@ public class UniversityDivision {
                 '}';
     }
 
-    public long getDivisionID() {
+    public Long getDivisionID() {
         return divisionID;
     }
 
-    public void setDivisionID(long divisionID) {
+    public void setDivisionID(Long divisionID) {
         this.divisionID = divisionID;
     }
 

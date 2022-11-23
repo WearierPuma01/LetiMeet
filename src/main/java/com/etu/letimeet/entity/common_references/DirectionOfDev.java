@@ -13,6 +13,7 @@ import java.util.List;
 @Table(name = "directions_of_dev")
 public class DirectionOfDev {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "direction_id")
     private int directionID;
     @Column(name = "direction_name")

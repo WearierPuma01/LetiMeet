@@ -8,7 +8,7 @@ public class PartnerAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "account_id")
-    private long accountID;
+    private Long accountID;
     @Column(name = "login")
     private String login;
     @Column(name = "password")
@@ -29,11 +29,11 @@ public class PartnerAccount {
         this.partner = partner;
     }
 
-    public long getAccountID() {
+    public Long getAccountID() {
         return accountID;
     }
 
-    public void setAccountID(long accountID) {
+    public void setAccountID(Long accountID) {
         this.accountID = accountID;
     }
 

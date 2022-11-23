@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name = "agreement_status")
 public class AgreementStatus {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "status_id")
     private short statusID;
     @Column(name = "status_name")

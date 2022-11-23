@@ -12,12 +12,13 @@ import java.util.List;
 @Table(name = "interactions")
 public class Interaction {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "interaction_id")
-    private long interactionID;
+    private Long interactionID;
     @Column(name = "partner_id")
-    private long partnerID;
+    private Long partnerID;
     @Column(name = "division_id")
-    private long divisionID;
+    private Long divisionID;
     @Column(name = "theme")
     private String theme;
     @Column(name = "contract_code")
@@ -40,7 +41,7 @@ public class Interaction {
     public Interaction() {
     }
 
-    public Interaction(long partnerID, long divisionID, String theme, String contractCode, Date signingDate, Date contractTerm) {
+    public Interaction(Long partnerID, Long divisionID, String theme, String contractCode, Date signingDate, Date contractTerm) {
         this.partnerID = partnerID;
         this.divisionID = divisionID;
         this.theme = theme;
@@ -69,27 +70,27 @@ public class Interaction {
                 '}';
     }
 
-    public long getInteractionID() {
+    public Long getInteractionID() {
         return interactionID;
     }
 
-    public void setInteractionID(long interactionID) {
+    public void setInteractionID(Long interactionID) {
         this.interactionID = interactionID;
     }
 
-    public long getPartnerID() {
+    public Long getPartnerID() {
         return partnerID;
     }
 
-    public void setPartnerID(long partnerID) {
+    public void setPartnerID(Long partnerID) {
         this.partnerID = partnerID;
     }
 
-    public long getDivisionID() {
+    public Long getDivisionID() {
         return divisionID;
     }
 
-    public void setDivisionID(long divisionID) {
+    public void setDivisionID(Long divisionID) {
         this.divisionID = divisionID;
     }
 

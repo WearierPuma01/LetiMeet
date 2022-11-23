@@ -1,14 +1,12 @@
 package com.etu.letimeet.entity.interaction.references;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "interactions_types")
 public class InteractionType {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "interaction_type_id")
     private short interactionTypeId;
     @Column(name = "interaction_type_name")

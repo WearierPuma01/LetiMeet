@@ -10,8 +10,9 @@ import java.util.Date;
 @Table(name ="agreements")
 public class Agreement {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "agreement_number")
-    private long agreementNumber;
+    private Long agreementNumber;
     @Column(name = "agr_date_from")
     private Date agreementDateFrom;
     @Column(name = "agr_date_to")
@@ -40,11 +41,11 @@ public class Agreement {
                 '}';
     }
 
-    public long getAgreementNumber() {
+    public Long getAgreementNumber() {
         return agreementNumber;
     }
 
-    public void setAgreementNumber(long agreementNumber) {
+    public void setAgreementNumber(Long agreementNumber) {
         this.agreementNumber = agreementNumber;
     }
 

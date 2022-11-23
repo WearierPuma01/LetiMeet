@@ -13,8 +13,9 @@ import java.util.List;
 @Table(name = "partners")
 public class Partner {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "partner_id")
-    private long partnerID;
+    private Long partnerID;
     @Column(name = "full_name")
     private String fullName;
     @Column(name = "short_name")
@@ -94,11 +95,11 @@ public class Partner {
                 '}';
     }
 
-    public long getPartnerID() {
+    public Long getPartnerID() {
         return partnerID;
     }
 
-    public void setPartnerID(long partnerID) {
+    public void setPartnerID(Long partnerID) {
         this.partnerID = partnerID;
     }
 

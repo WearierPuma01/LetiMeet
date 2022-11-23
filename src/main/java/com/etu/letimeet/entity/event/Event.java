@@ -12,8 +12,9 @@ import java.util.List;
 @Table(name = "events")
 public class Event {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "event_id")
-    private long eventId;
+    private Long eventId;
     @Column(name = "event_name")
     private String eventName;
     @Column(name = "event_date")
@@ -57,11 +58,11 @@ public class Event {
                 '}';
     }
 
-    public long getEventId() {
+    public Long getEventId() {
         return eventId;
     }
 
-    public void setEventId(long eventId) {
+    public void setEventId(Long eventId) {
         this.eventId = eventId;
     }
 

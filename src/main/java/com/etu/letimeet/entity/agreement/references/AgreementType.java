@@ -1,14 +1,12 @@
 package com.etu.letimeet.entity.agreement.references;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "agreement_types")
 public class AgreementType {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "type_id")
     private int typeID;
     @Column(name = "type_name")

@@ -9,8 +9,9 @@ import java.util.Date;
 @Table(name = "joint_structures")
 public class JointStructure {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "structure_id")
-    private long structureID;
+    private Long structureID;
     @Column(name = "structure_full_name")
     private String structureFullName;
     @Column(name = "structure_short_name")
@@ -26,9 +27,9 @@ public class JointStructure {
     @Column(name = "email")
     private String email;
     @Column(name = "partner_id")
-    private long partnerID;
+    private Long partnerID;
     @Column(name = "division_id")
-    private long divisionID;
+    private Long divisionID;
     @ManyToOne
     @JoinColumn(name = "structure_type_id")
     private StructureType structureType;
@@ -36,7 +37,7 @@ public class JointStructure {
     public JointStructure() {
     }
 
-    public JointStructure(String structureFullName, String structureShortName, Date formationDate, String director, String directorName, String phone, String email, long partnerID, long divisionID) {
+    public JointStructure(String structureFullName, String structureShortName, Date formationDate, String director, String directorName, String phone, String email, Long partnerID, Long divisionID) {
         this.structureFullName = structureFullName;
         this.structureShortName = structureShortName;
         this.formationDate = formationDate;
@@ -64,11 +65,11 @@ public class JointStructure {
                 '}';
     }
 
-    public long getStructureID() {
+    public Long getStructureID() {
         return structureID;
     }
 
-    public void setStructureID(long structureID) {
+    public void setStructureID(Long structureID) {
         this.structureID = structureID;
     }
 
@@ -128,19 +129,19 @@ public class JointStructure {
         this.email = email;
     }
 
-    public long getPartnerID() {
+    public Long getPartnerID() {
         return partnerID;
     }
 
-    public void setPartnerID(long partnerID) {
+    public void setPartnerID(Long partnerID) {
         this.partnerID = partnerID;
     }
 
-    public long getDivisionID() {
+    public Long getDivisionID() {
         return divisionID;
     }
 
-    public void setDivisionID(long divisionID) {
+    public void setDivisionID(Long divisionID) {
         this.divisionID = divisionID;
     }
 

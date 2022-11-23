@@ -1,14 +1,12 @@
 package com.etu.letimeet.entity.university_division.references;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "faculties")
 public class Faculty {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "faculty_id")
     private int facultyID;
     @Column(name = "faculty_name")

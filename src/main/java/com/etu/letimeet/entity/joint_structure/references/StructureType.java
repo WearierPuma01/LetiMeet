@@ -1,14 +1,12 @@
 package com.etu.letimeet.entity.joint_structure.references;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "structures_types")
 public class StructureType {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "structure_type_id")
     private short structureTypeID;
     @Column(name = "structure_type_name")
