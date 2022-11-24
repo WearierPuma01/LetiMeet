@@ -26,7 +26,4 @@ public class UniversityDivisionController {
     public UniversityDivision getOneUniversityDivisionInfo(@RequestParam(name = "division_id") Long id) {
         return universityDivisionService.getOneDivisionInfo(id);
     }
-
-
-
 }

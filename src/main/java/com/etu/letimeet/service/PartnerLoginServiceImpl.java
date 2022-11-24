@@ -19,6 +19,7 @@ public class PartnerLoginServiceImpl implements PartnerLoginService{
     }
 
     @Override
+    @Transactional
     public void register(String partnerFullName, PartnerAccount partnerAccount) {
         partnerLoginDAO.register(partnerFullName, partnerAccount);
     }
