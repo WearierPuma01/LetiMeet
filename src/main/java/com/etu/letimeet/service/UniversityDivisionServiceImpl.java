@@ -18,4 +18,9 @@ public class UniversityDivisionServiceImpl implements UniversityDivisionService{
     public List<UniversityDivision> getAllUniversityDivisions() {
         return universityDivisionDAO.getAllUniversityDivisions();
     }
+
+    @Override
+    public UniversityDivision getOneDivisionInfo(Long id) {
+        return universityDivisionDAO.getOneDivisionInfo(id);
+    }
 }

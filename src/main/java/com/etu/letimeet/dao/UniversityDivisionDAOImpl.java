@@ -19,4 +19,10 @@ public class UniversityDivisionDAOImpl implements UniversityDivisionDAO{
         String query = "from university_divisions";
         return session.createQuery(query, UniversityDivision.class).getResultList();
     }
+
+    @Override
+    public UniversityDivision getOneDivisionInfo(Long id) {
+        Session session = entityManager.unwrap(Session.class);
+        return entityManager.find(UniversityDivision.class, id);
+    }
 }

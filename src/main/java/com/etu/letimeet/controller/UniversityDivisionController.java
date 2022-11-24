@@ -5,6 +5,7 @@ import com.etu.letimeet.service.UniversityDivisionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,5 +21,12 @@ public class UniversityDivisionController {
     public List<UniversityDivision> getAllUniversityDivisions() {
         return universityDivisionService.getAllUniversityDivisions();
     }
+
+    @GetMapping("/getone")
+    public UniversityDivision getOneUniversityDivisionInfo(@RequestParam(name = "division_id") Long id) {
+        return universityDivisionService.getOneDivisionInfo(id);
+    }
+
+
 
 }

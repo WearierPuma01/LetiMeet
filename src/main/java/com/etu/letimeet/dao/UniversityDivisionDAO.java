@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface UniversityDivisionDAO {
     public List<UniversityDivision> getAllUniversityDivisions();
+    public UniversityDivision getOneDivisionInfo(Long id);
 }
