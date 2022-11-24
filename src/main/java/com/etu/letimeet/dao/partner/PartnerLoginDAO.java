@@ -1,4 +1,4 @@
-package com.etu.letimeet.dao;
+package com.etu.letimeet.dao.partner;
 
 import com.etu.letimeet.entity.partner.PartnerAccount;
 

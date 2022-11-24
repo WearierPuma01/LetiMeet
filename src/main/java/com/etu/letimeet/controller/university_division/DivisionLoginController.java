@@ -1,12 +1,12 @@
-package com.etu.letimeet.controller;
+package com.etu.letimeet.controller.university_division;
 
+import com.etu.letimeet.controller.request_bodyes.DivisionRegisterRequestBody;
 import com.etu.letimeet.entity.university_division.DivisionAccount;
-import com.etu.letimeet.service.DivisionLoginService;
+import com.etu.letimeet.service.university_division.DivisionLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.HttpStatusCodeException;
 
 @RestController
 @RequestMapping("/university")

@@ -1,7 +1,7 @@
-package com.etu.letimeet.controller;
+package com.etu.letimeet.controller.partner;
 
 import com.etu.letimeet.entity.partner.Partner;
-import com.etu.letimeet.service.PartnerService;
+import com.etu.letimeet.service.partner.PartnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

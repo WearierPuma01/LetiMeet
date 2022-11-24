@@ -1,8 +1,7 @@
-package com.etu.letimeet.dao;
+package com.etu.letimeet.dao.partner;
 
 import com.etu.letimeet.entity.partner.Partner;
 import com.etu.letimeet.entity.partner.PartnerAccount;
-import com.etu.letimeet.entity.university_division.UniversityDivision;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

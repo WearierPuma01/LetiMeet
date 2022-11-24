@@ -1,4 +1,4 @@
-package com.etu.letimeet.service;
+package com.etu.letimeet.service.partner;
 
 import com.etu.letimeet.entity.partner.PartnerAccount;
 

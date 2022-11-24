@@ -1,7 +1,7 @@
-package com.etu.letimeet.controller;
+package com.etu.letimeet.controller.university_division;
 
 import com.etu.letimeet.entity.university_division.UniversityDivision;
-import com.etu.letimeet.service.UniversityDivisionService;
+import com.etu.letimeet.service.university_division.UniversityDivisionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

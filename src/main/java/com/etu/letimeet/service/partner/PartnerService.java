@@ -1,9 +1,9 @@
-package com.etu.letimeet.dao;
+package com.etu.letimeet.service.partner;
 
 import com.etu.letimeet.entity.partner.Partner;
 
 import java.util.List;
 
-public interface PartnerDAO {
+public interface PartnerService {
     public List<Partner> getAllPartners();
 }

@@ -1,4 +1,4 @@
-package com.etu.letimeet.dao;
+package com.etu.letimeet.dao.university_division;
 
 import com.etu.letimeet.entity.university_division.UniversityDivision;
 import org.hibernate.Session;

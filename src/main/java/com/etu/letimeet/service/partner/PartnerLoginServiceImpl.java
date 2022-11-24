@@ -1,6 +1,6 @@
-package com.etu.letimeet.service;
+package com.etu.letimeet.service.partner;
 
-import com.etu.letimeet.dao.PartnerLoginDAO;
+import com.etu.letimeet.dao.partner.PartnerLoginDAO;
 import com.etu.letimeet.entity.partner.PartnerAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

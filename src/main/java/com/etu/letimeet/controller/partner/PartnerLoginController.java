@@ -1,7 +1,8 @@
-package com.etu.letimeet.controller;
+package com.etu.letimeet.controller.partner;
 
+import com.etu.letimeet.controller.request_bodyes.DivisionRegisterRequestBody;
 import com.etu.letimeet.entity.partner.PartnerAccount;
-import com.etu.letimeet.service.PartnerLoginService;
+import com.etu.letimeet.service.partner.PartnerLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

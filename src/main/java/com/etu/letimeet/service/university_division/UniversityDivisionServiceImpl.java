@@ -1,6 +1,6 @@
-package com.etu.letimeet.service;
+package com.etu.letimeet.service.university_division;
 
-import com.etu.letimeet.dao.UniversityDivisionDAO;
+import com.etu.letimeet.dao.university_division.UniversityDivisionDAO;
 import com.etu.letimeet.entity.university_division.UniversityDivision;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

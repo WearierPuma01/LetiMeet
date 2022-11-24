@@ -1,4 +1,4 @@
-package com.etu.letimeet.controller;
+package com.etu.letimeet.controller.request_bodyes;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

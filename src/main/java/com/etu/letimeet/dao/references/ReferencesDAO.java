@@ -1,4 +1,4 @@
-package com.etu.letimeet.dao;
+package com.etu.letimeet.dao.references;
 
 import com.etu.letimeet.entity.agreement.references.AgreementStatus;
 import com.etu.letimeet.entity.agreement.references.AgreementType;

@@ -1,4 +1,4 @@
-package com.etu.letimeet.service;
+package com.etu.letimeet.service.references;
 
 import com.etu.letimeet.entity.agreement.references.AgreementStatus;
 import com.etu.letimeet.entity.agreement.references.AgreementType;

@@ -1,10 +1,9 @@
-package com.etu.letimeet.dao;
+package com.etu.letimeet.dao.partner;
 
 import com.etu.letimeet.entity.partner.Partner;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.List;
