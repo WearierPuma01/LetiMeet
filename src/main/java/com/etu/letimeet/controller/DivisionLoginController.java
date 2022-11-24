@@ -24,7 +24,7 @@ public class DivisionLoginController {
     }
 
     @PostMapping("/register")
-    public void register(@RequestParam String divisionFullName, @RequestParam String login, @RequestParam String password) {
-        divisionLoginService.register(divisionFullName, new DivisionAccount(login, password, null, null));
+    public void register(@RequestBody DivisionRegisterRequestBody registerRequest) {
+        divisionLoginService.register(registerRequest.getFullName(), new DivisionAccount(registerRequest.getLogin(), registerRequest.getPassword(), null, null));
     }
 }

@@ -17,4 +17,9 @@ public class PartnerLoginServiceImpl implements PartnerLoginService{
     public PartnerAccount login(String login, String password) {
         return partnerLoginDAO.login(login, password);
     }
+
+    @Override
+    public void register(String partnerFullName, PartnerAccount partnerAccount) {
+        partnerLoginDAO.register(partnerFullName, partnerAccount);
+    }
 }

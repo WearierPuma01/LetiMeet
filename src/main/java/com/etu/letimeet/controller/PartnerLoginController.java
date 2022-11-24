@@ -15,4 +15,9 @@ public class PartnerLoginController {
     public PartnerAccount login(@RequestParam String login, @RequestParam String password) {
         return partnerLoginService.login(login, password);
     }
+
+    @PostMapping("register")
+    public void register(@RequestBody DivisionRegisterRequestBody registerRequest) {
+        partnerLoginService.register(registerRequest.getFullName(), new PartnerAccount(registerRequest.getLogin(), registerRequest.getPassword(), null, null));
+    }
 }
