@@ -3,10 +3,7 @@ package com.etu.letimeet.controller.university_division;
 import com.etu.letimeet.entity.university_division.UniversityDivision;
 import com.etu.letimeet.service.university_division.UniversityDivisionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +17,11 @@ public class UniversityDivisionController {
     @GetMapping("/all")
     public List<UniversityDivision> getAllUniversityDivisions() {
         return universityDivisionService.getAllUniversityDivisions();
+    }
+
+    @PutMapping("/update")
+    public UniversityDivision updateUniversityDivision(@RequestBody UniversityDivision universityDivision) {
+        return universityDivisionService.updateUniversityDivision(universityDivision);
     }
 
     @GetMapping("/getone")

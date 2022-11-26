@@ -20,6 +20,11 @@ public class UniversityDivisionServiceImpl implements UniversityDivisionService{
     }
 
     @Override
+    public UniversityDivision updateUniversityDivision(UniversityDivision universityDivision) {
+        return universityDivisionDAO.updateUniversityDivision(universityDivision);
+    }
+
+    @Override
     @Transactional
     public UniversityDivision getOneDivisionInfo(Long id) {
         return universityDivisionDAO.getOneDivisionInfo(id);

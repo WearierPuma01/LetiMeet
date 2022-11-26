@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface UniversityDivisionService {
     public List<UniversityDivision> getAllUniversityDivisions();
+    public UniversityDivision updateUniversityDivision(UniversityDivision universityDivision);
     public UniversityDivision getOneDivisionInfo(Long id);
 }

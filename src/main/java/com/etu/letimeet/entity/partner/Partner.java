@@ -1,5 +1,6 @@
 package com.etu.letimeet.entity.partner;
 
+import com.etu.letimeet.entity.agreement.Agreement;
 import com.etu.letimeet.entity.common_references.DirectionOfDev;
 import com.etu.letimeet.entity.interaction.Interaction;
 import com.etu.letimeet.entity.joint_structure.JointStructure;
@@ -39,6 +40,14 @@ public class Partner {
     @ManyToOne
     @JoinColumn(name = "partner_type")
     private PartnerType partnerType;
+
+    @ManyToMany
+    @JoinTable (
+            name = "partners_agreements",
+            joinColumns = @JoinColumn(name = "partner_id"),
+            inverseJoinColumns = @JoinColumn(name = "agreement_number")
+    )
+    private List<Agreement> agreements;
     @ManyToMany
     @JoinTable (
             name = "partner_directions",
@@ -79,6 +88,13 @@ public class Partner {
             directionsOfDev = new ArrayList<>();
         }
         directionsOfDev.add(directionOfDev);
+    }
+
+    public void addAgreement(Agreement agreement) {
+        if (agreements == null) {
+            agreements = new ArrayList<>();
+        }
+        agreements.add(agreement);
     }
 
     @Override
@@ -189,5 +205,13 @@ public class Partner {
 
     public void setDirectionsOfDev(List<DirectionOfDev> directionsOfDev) {
         this.directionsOfDev = directionsOfDev;
+    }
+
+    public List<Agreement> getAgreements() {
+        return agreements;
+    }
+
+    public void setAgreements(List<Agreement> agreements) {
+        this.agreements = agreements;
     }
 }

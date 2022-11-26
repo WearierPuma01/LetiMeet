@@ -21,6 +21,13 @@ public class UniversityDivisionDAOImpl implements UniversityDivisionDAO{
     }
 
     @Override
+    public UniversityDivision updateUniversityDivision(UniversityDivision universityDivision) {
+        Session session = entityManager.unwrap(Session.class);
+        session.saveOrUpdate(universityDivision);
+        return universityDivision;
+    }
+
+    @Override
     public UniversityDivision getOneDivisionInfo(Long id) {
         Session session = entityManager.unwrap(Session.class);
         return entityManager.find(UniversityDivision.class, id);

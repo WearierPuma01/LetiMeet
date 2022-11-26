@@ -3,7 +3,7 @@ package com.etu.letimeet.controller.request_bodyes;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DivisionRegisterRequestBody {
-    private String  fullName;
+    private String fullName;
     private String login;
     private String password;
 
