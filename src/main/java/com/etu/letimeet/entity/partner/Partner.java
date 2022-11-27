@@ -6,6 +6,7 @@ import com.etu.letimeet.entity.event.Event;
 import com.etu.letimeet.entity.interaction.Interaction;
 import com.etu.letimeet.entity.joint_structure.JointStructure;
 import com.etu.letimeet.entity.partner.references.PartnerType;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -131,6 +132,7 @@ public class Partner {
         return partnerID;
     }
 
+    @JsonProperty("partnerID")
     public void setPartnerID(Long partnerID) {
         this.partnerID = partnerID;
     }
@@ -139,6 +141,7 @@ public class Partner {
         return fullName;
     }
 
+    @JsonProperty("fullName")
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
@@ -147,6 +150,7 @@ public class Partner {
         return shortName;
     }
 
+    @JsonProperty("shortName")
     public void setShortName(String shortName) {
         this.shortName = shortName;
     }
@@ -155,6 +159,7 @@ public class Partner {
         return address;
     }
 
+    @JsonProperty("address")
     public void setAddress(String address) {
         this.address = address;
     }
@@ -163,6 +168,7 @@ public class Partner {
         return phone;
     }
 
+    @JsonProperty("phone")
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -171,6 +177,7 @@ public class Partner {
         return website;
     }
 
+    @JsonProperty("website")
     public void setWebsite(String website) {
         this.website = website;
     }
@@ -179,6 +186,7 @@ public class Partner {
         return email;
     }
 
+    @JsonProperty("email")
     public void setEmail(String email) {
         this.email = email;
     }
@@ -187,6 +195,7 @@ public class Partner {
         return director;
     }
 
+    @JsonProperty("director")
     public void setDirector(String director) {
         this.director = director;
     }
@@ -195,6 +204,7 @@ public class Partner {
         return jointStructures;
     }
 
+    @JsonProperty("jointStructures")
     public void setJointStructures(List<JointStructure> jointStructures) {
         this.jointStructures = jointStructures;
     }
@@ -203,6 +213,7 @@ public class Partner {
         return interactions;
     }
 
+    @JsonProperty("interactions")
     public void setInteractions(List<Interaction> interactions) {
         this.interactions = interactions;
     }
@@ -211,6 +222,7 @@ public class Partner {
         return partnerType;
     }
 
+    @JsonProperty("partnerType")
     public void setPartnerType(PartnerType partnerType) {
         this.partnerType = partnerType;
     }
@@ -219,6 +231,7 @@ public class Partner {
         return directionsOfDev;
     }
 
+    @JsonProperty("directionsOfDev")
     public void setDirectionsOfDev(List<DirectionOfDev> directionsOfDev) {
         this.directionsOfDev = directionsOfDev;
     }
@@ -227,6 +240,7 @@ public class Partner {
         return agreements;
     }
 
+    @JsonProperty("agreements")
     public void setAgreements(List<Agreement> agreements) {
         this.agreements = agreements;
     }
@@ -235,6 +249,7 @@ public class Partner {
         return events;
     }
 
+    @JsonProperty("events")
     public void setEvents(List<Event> events) {
         this.events = events;
     }
