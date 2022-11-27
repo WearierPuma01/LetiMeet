@@ -1,5 +1,8 @@
 package com.etu.letimeet.dao.university_division;
 
+import com.etu.letimeet.entity.agreement.Agreement;
+import com.etu.letimeet.entity.event.Event;
+import com.etu.letimeet.entity.partner.Partner;
 import com.etu.letimeet.entity.university_division.UniversityDivision;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +34,35 @@ public class UniversityDivisionDAOImpl implements UniversityDivisionDAO{
     public UniversityDivision getOneDivisionInfo(Long id) {
         Session session = entityManager.unwrap(Session.class);
         return entityManager.find(UniversityDivision.class, id);
+    }
+
+    @Override
+    public List<Agreement> getDivisionAgreements(Long id) {
+        Session session = entityManager.unwrap(Session.class);
+        UniversityDivision universityDivision = entityManager.find(UniversityDivision.class, id);
+        return  universityDivision.getAgreements();
+    }
+
+    @Override
+    public void addDivisionAgreement(Long id, Agreement agreement) {
+        Session session = entityManager.unwrap(Session.class);
+        UniversityDivision universityDivision =  entityManager.find(UniversityDivision.class, id);
+        universityDivision.addAgreement(agreement);
+        session.update(universityDivision);
+    }
+
+    @Override
+    public List<Event> getDivisionEvents(Long id) {
+        Session session = entityManager.unwrap(Session.class);
+        UniversityDivision universityDivision = entityManager.find(UniversityDivision.class, id);
+        return universityDivision.getEvents();
+    }
+
+    @Override
+    public void addDivisionEvent(Long id, Event event) {
+        Session session = entityManager.unwrap(Session.class);
+        UniversityDivision universityDivision =  entityManager.find(UniversityDivision.class, id);
+        universityDivision.addEvent(event);
+        session.update(universityDivision);
     }
 }

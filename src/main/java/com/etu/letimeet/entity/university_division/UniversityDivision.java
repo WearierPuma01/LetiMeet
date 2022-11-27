@@ -1,6 +1,8 @@
 package com.etu.letimeet.entity.university_division;
 
+import com.etu.letimeet.entity.agreement.Agreement;
 import com.etu.letimeet.entity.common_references.DirectionOfDev;
+import com.etu.letimeet.entity.event.Event;
 import com.etu.letimeet.entity.interaction.Interaction;
 import com.etu.letimeet.entity.joint_structure.JointStructure;
 import com.etu.letimeet.entity.university_division.references.Faculty;
@@ -45,6 +47,22 @@ public class UniversityDivision {
     )
     private List<DirectionOfDev> directionsOfDev;
 
+    @ManyToMany
+    @JoinTable (
+            name = "divisions_agreements",
+            joinColumns = @JoinColumn(name = "division_id"),
+            inverseJoinColumns = @JoinColumn(name = "agreement_number")
+    )
+    private List<Agreement> agreements;
+
+    @ManyToMany
+    @JoinTable (
+            name = "divisions_events",
+            joinColumns = @JoinColumn(name = "division_id"),
+            inverseJoinColumns = @JoinColumn(name = "event_id")
+    )
+    private List<Event> events;
+
     public UniversityDivision() {
     }
 
@@ -76,6 +94,20 @@ public class UniversityDivision {
             directionsOfDev = new ArrayList<>();
         }
         directionsOfDev.add(directionOfDev);
+    }
+
+    public void addAgreement(Agreement agreement) {
+        if (agreements == null) {
+            agreements = new ArrayList<>();
+        }
+        agreements.add(agreement);
+    }
+
+    public void addEvent(Event event) {
+        if (events == null) {
+            events = new ArrayList<>();
+        }
+        events.add(event);
     }
 
     @Override
@@ -177,5 +209,21 @@ public class UniversityDivision {
 
     public void setDirectionsOfDev(List<DirectionOfDev> directionsOfDev) {
         this.directionsOfDev = directionsOfDev;
+    }
+
+    public List<Agreement> getAgreements() {
+        return agreements;
+    }
+
+    public void setAgreements(List<Agreement> agreements) {
+        this.agreements = agreements;
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
     }
 }

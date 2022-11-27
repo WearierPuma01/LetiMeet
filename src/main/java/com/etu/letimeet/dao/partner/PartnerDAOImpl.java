@@ -1,6 +1,7 @@
 package com.etu.letimeet.dao.partner;
 
 import com.etu.letimeet.entity.agreement.Agreement;
+import com.etu.letimeet.entity.event.Event;
 import com.etu.letimeet.entity.partner.Partner;
 import com.etu.letimeet.entity.university_division.UniversityDivision;
 import org.hibernate.Session;
@@ -30,6 +31,12 @@ public class PartnerDAOImpl implements PartnerDAO{
     }
 
     @Override
+    public Partner getOnePartnerInfo(Long id) {
+        Session session = entityManager.unwrap(Session.class);
+        return entityManager.find(Partner.class, id);
+    }
+
+    @Override
     public List<Agreement> getPartnerAgreements(Long id) {
         Session session = entityManager.unwrap(Session.class);
         Partner partner =  entityManager.find(Partner.class, id);
@@ -42,5 +49,20 @@ public class PartnerDAOImpl implements PartnerDAO{
         Partner partner =  entityManager.find(Partner.class, id);
         partner.addAgreement(agreement);
         session.update(partner);
+    }
+
+    @Override
+    public List<Event> getPartnerEvents(Long id) {
+        Session session = entityManager.unwrap(Session.class);
+        Partner partner =  entityManager.find(Partner.class, id);
+        return partner.getEvents();
+    }
+
+    @Override
+    public void addPartnerEvent(Long id, Event event) {
+        Session session = entityManager.unwrap(Session.class);
+        Partner partner =  entityManager.find(Partner.class, id);
+        partner.addEvent(event);
+        session.update(event);
     }
 }
