@@ -2,8 +2,11 @@ package com.etu.letimeet.dao.partner;
 
 import com.etu.letimeet.entity.agreement.Agreement;
 import com.etu.letimeet.entity.event.Event;
+import com.etu.letimeet.entity.interaction.Interaction;
+import com.etu.letimeet.entity.joint_structure.JointStructure;
 import com.etu.letimeet.entity.partner.Partner;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 public interface PartnerDAO {
@@ -20,4 +23,8 @@ public interface PartnerDAO {
     public List<Event> getPartnerEvents(Long id);
 
     public void addPartnerEvent(Long id, Event event);
+    public List<Interaction> getPartnerInteractions(Long id);
+    public void addPartnerInteraction(Long id, Interaction interaction);
+    public List<JointStructure> getPartnerJointStructures(Long id);
+    public void addPartnerJointStructure(Long id, JointStructure jointStructure);
 }

@@ -3,6 +3,8 @@ package com.etu.letimeet.service.partner;
 import com.etu.letimeet.dao.partner.PartnerDAO;
 import com.etu.letimeet.entity.agreement.Agreement;
 import com.etu.letimeet.entity.event.Event;
+import com.etu.letimeet.entity.interaction.Interaction;
+import com.etu.letimeet.entity.joint_structure.JointStructure;
 import com.etu.letimeet.entity.partner.Partner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,5 +59,27 @@ public class PartnerServiceImpl implements PartnerService{
         partnerDAO.addPartnerEvent(id, event);
     }
 
+    @Override
+    @Transactional
+    public List<Interaction> getPartnerInteractions(Long id) {
+        return partnerDAO.getPartnerInteractions(id);
+    }
 
+    @Override
+    @Transactional
+    public void addPartnerInteraction(Long id, Interaction interaction) {
+        partnerDAO.addPartnerInteraction(id, interaction);
+    }
+
+    @Override
+    @Transactional
+    public List<JointStructure> getPartnerJointStructures(Long id) {
+        return partnerDAO.getPartnerJointStructures(id);
+    }
+
+    @Override
+    @Transactional
+    public void addPartnerJointStructure(Long id, JointStructure jointStructure) {
+        partnerDAO.addPartnerJointStructure(id, jointStructure);
+    }
 }

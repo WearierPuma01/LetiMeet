@@ -6,6 +6,8 @@ import com.etu.letimeet.entity.event.Event;
 import com.etu.letimeet.entity.interaction.Interaction;
 import com.etu.letimeet.entity.joint_structure.JointStructure;
 import com.etu.letimeet.entity.partner.references.PartnerType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
@@ -14,6 +16,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "partners")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Partner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

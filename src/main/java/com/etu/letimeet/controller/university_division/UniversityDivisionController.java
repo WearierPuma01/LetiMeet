@@ -2,8 +2,12 @@ package com.etu.letimeet.controller.university_division;
 
 import com.etu.letimeet.controller.request_bodyes.AgreementRequestBody;
 import com.etu.letimeet.controller.request_bodyes.EventRequestBody;
+import com.etu.letimeet.controller.request_bodyes.InteractionRequestBody;
+import com.etu.letimeet.controller.request_bodyes.JointStructureRequestBody;
 import com.etu.letimeet.entity.agreement.Agreement;
 import com.etu.letimeet.entity.event.Event;
+import com.etu.letimeet.entity.interaction.Interaction;
+import com.etu.letimeet.entity.joint_structure.JointStructure;
 import com.etu.letimeet.entity.university_division.UniversityDivision;
 import com.etu.letimeet.service.university_division.UniversityDivisionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +55,24 @@ public class UniversityDivisionController {
     @PostMapping("/addEvent")
     public void addDivisionEvent(@RequestBody EventRequestBody eventRequestBody) {
         universityDivisionService.addDivisionEvent(eventRequestBody.getId(), eventRequestBody.getEvent());
+    }
+    @GetMapping("/interactions")
+    public List<Interaction> getDivisionInteractions(@RequestParam("division_id") Long id) {
+        return universityDivisionService.getDivisionInteractions(id);
+    }
+
+    @PostMapping("/addInteraction")
+    public void addDivisionInteraction(@RequestBody InteractionRequestBody interactionRequestBody) {
+        universityDivisionService.addDivisionInteraction(interactionRequestBody.getId(), interactionRequestBody.getInteraction());
+    }
+
+    @GetMapping("/jointStructures")
+    public List<JointStructure> getDivisionJointStructures(@RequestParam("division_id") Long id) {
+        return universityDivisionService.getDivisionJointStructures(id);
+    }
+
+    @PostMapping("/addJointStructure")
+    public void addDivisionInteraction(@RequestBody JointStructureRequestBody jointStructureRequestBody) {
+        universityDivisionService.addDivisionJointStructure(jointStructureRequestBody.getId(), jointStructureRequestBody.getJointStructure());
     }
 }

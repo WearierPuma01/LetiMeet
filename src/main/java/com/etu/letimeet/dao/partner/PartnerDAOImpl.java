@@ -2,6 +2,8 @@ package com.etu.letimeet.dao.partner;
 
 import com.etu.letimeet.entity.agreement.Agreement;
 import com.etu.letimeet.entity.event.Event;
+import com.etu.letimeet.entity.interaction.Interaction;
+import com.etu.letimeet.entity.joint_structure.JointStructure;
 import com.etu.letimeet.entity.partner.Partner;
 import com.etu.letimeet.entity.university_division.UniversityDivision;
 import org.hibernate.Session;
@@ -63,6 +65,36 @@ public class PartnerDAOImpl implements PartnerDAO{
         Session session = entityManager.unwrap(Session.class);
         Partner partner =  entityManager.find(Partner.class, id);
         partner.addEvent(event);
-        session.update(event);
+        session.update(partner);
+    }
+
+    @Override
+    public List<Interaction> getPartnerInteractions(Long id) {
+        Session session = entityManager.unwrap(Session.class);
+        Partner partner =  entityManager.find(Partner.class, id);
+        return partner.getInteractions();
+    }
+
+    @Override
+    public void addPartnerInteraction(Long id, Interaction interaction) {
+        Session session = entityManager.unwrap(Session.class);
+        Partner partner =  entityManager.find(Partner.class, id);
+        partner.addInteractionToPartner(interaction);
+        session.update(partner);
+    }
+
+    @Override
+    public List<JointStructure> getPartnerJointStructures(Long id) {
+        Session session = entityManager.unwrap(Session.class);
+        Partner partner =  entityManager.find(Partner.class, id);
+        return partner.getJointStructures();
+    }
+
+    @Override
+    public void addPartnerJointStructure(Long id, JointStructure jointStructure) {
+        Session session = entityManager.unwrap(Session.class);
+        Partner partner =  entityManager.find(Partner.class, id);
+        partner.addJointStructureToPartner(jointStructure);
+        session.update(partner);
     }
 }
